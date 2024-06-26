@@ -17,14 +17,9 @@ app.post('/events', (req, res) => {
         if (!err) {
             events = JSON.parse(data);
         }
-        events.push(eventData);
+         events.push(eventData);
 
-        fs.writeFile(FILE_PATH, JSON.stringify(events, null, 2), (err) => {
-            if (err) {
-                return res.status(500).send('Error writing to file');
-            }
-            res.status(200).send('Event saved');
-        });
+         res.status(200).send('Event saved');
     });
 });
 
